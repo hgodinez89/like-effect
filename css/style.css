@@ -1,0 +1,340 @@
+html, body {
+    background-color: #eee;
+    font-family: Roboto, Helvetica, Arial;
+}
+
+.container {
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+    width: 100wh;
+}
+
+.card {
+    position: relative;
+    background: white;
+    border-radius: 2px;
+    width: 320px;
+    height: 250px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.16), 0px 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.avatar {
+    position: absolute;
+    display: flex;
+}
+
+.avatar img {
+    position: relative;
+    top: 20px;
+    left: 25px;
+    border-radius: 50%;
+    width: 10%;
+    height: 10%;
+}
+
+.text-avatar {
+    margin: 14px 0px 0px 38px;
+    line-height: 0.3em;
+}
+
+.title-avatar {
+    font-size: 13px;
+    color: #1a202c;
+}
+
+.subtitle-avatar {
+    font-size: 12px;
+    color: #4a5568;
+}
+
+.post {
+    position: relative;
+    border-radius: 5px;
+    top: 67px;
+    left: 25px;
+    width: 84%;
+    height: 127px;
+    background-color:#edf2f7;
+}
+
+.post p, ol {
+    font-size: 11px;
+    color: #2d3748;
+}
+
+.post p:nth-child(1) {
+    padding: 12px 12px 0px;
+}
+
+.post p:not(:first-child) {
+    padding: 0px 12px;
+}
+
+.reactions-container {
+    position: absolute;
+}
+
+.reactions-container .reaction-btn {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: 75px;
+    left: 33px;
+    fill: #3182ce;
+    cursor: pointer;
+}
+
+.reactions-container .reaction-btn-label {
+    position: relative;
+    top: 44px;
+    left: 58px;
+    color: #3182ce;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.reactions {
+    position: relative;
+    top: -22px;
+    left: 55px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.16), 0px 2px 10px rgba(0, 0, 0, 0.12);
+    padding: 4px 6px;
+    cursor: pointer;
+    visibility: hidden;
+    transition: all 0.2s;
+}
+
+.reactions .like {
+    margin: 0px 4px 0px 8px;
+    fill: #3182ce;
+}
+
+.reactions .love {
+    margin: 0px 4px;
+    fill: #e53e3e;
+}
+
+.reactions .unlike {
+    margin: 0px 4px;
+    fill: #1a202c;
+}
+
+.reactions .thinking {
+    margin: 0px 8px 0px 4px;
+    fill: #d69e2e;
+}
+
+.reactions-container .comment-btn, .share-btn {
+    position: relative;
+    fill: #cbd5e0;
+    cursor: not-allowed;
+}
+
+.reactions-container .comment-btn-label, .share-btn-label {
+    position: relative;
+    top: -54px;
+    left: 210px;
+    color: #cbd5e0;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.reactions-container .comment-btn {
+    top: -27px;
+    left: 120px;
+    height: 22px;
+    width: 24px;
+}
+
+.reactions-container .comment-btn-label {
+    top: -61px;
+    left: 150px;
+}
+
+.reactions-container .share-btn {
+    top: -92px;
+    left: 225px;
+}
+
+.reactions-container .share-btn-label {
+    top: -128px;
+    left: 255px;
+}
+
+.reaction-up {
+    position: absolute;
+    animation: reaction 3.4s forwards;
+    animation-timing-function: ease;
+}
+
+.reaction-up.like {
+    fill: #3182ce;
+}
+
+.reaction-up.love {
+    fill: #e53e3e;
+}
+
+.reaction-up.unlike {
+    fill: #1a202c;
+}
+
+.reaction-up.thinking {
+    fill: #d69e2e;
+}
+
+@keyframes reaction {
+    0% {
+        opacity: 0;
+        top: 90px;
+        left: -105px;
+        transform: scale(0);
+    }
+
+    10% {
+        opacity: 1;
+        top: 60px;
+        left: -110px;
+        transform: scale(0.2);
+    }
+
+    20% {
+        opacity: 1;
+        top: 40px;
+        left: -100px;
+        transform: scale(0.5);
+    }
+
+    30% {
+        opacity: 1;
+        top: 20px;
+        left: -100px;
+        transform: scale(0.7);
+    }
+    
+    40% {
+        opacity: 1;
+        top: 0px;
+        left: -100px;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        top: -20px;
+        left: -100px;
+        transform: scale(1);
+    }
+
+    60% {
+        opacity: 1;
+        top: -40px;
+        left: -100px;
+        transform: scale(0.8);
+    }
+
+    70% {
+        opacity: 1;
+        top: -60px;
+        left: -110px;
+        transform: scale(0.6);
+    }
+
+    80% {
+        opacity: 1;
+        top: -80px;
+        left: -100px;
+        transform: scale(0.4);
+    }
+
+    90% {
+        opacity: 1;
+        top: -100px;
+        left: -100px;
+        transform: scale(0.2);
+    }
+
+    100% {
+        opacity: 0;
+        top: -120px;
+        left: -100px;
+        transform: scale(0);
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: 450px;
+        height: 310px;
+    }
+
+    .text-avatar {
+        margin: 16px 0px 0px 38px;
+    }
+
+    .post {
+        top: 80px;
+        width: 401px;
+        height: 160px;
+    }
+
+    .title-avatar {
+        font-size: 15px;
+    }
+    
+    .subtitle-avatar {
+        font-size: 14px;
+    }
+
+    .post p, ol {
+        font-size: 14px;
+    }
+
+    .reactions-container .reaction-btn {
+        top: 97px;
+        left: 33px;
+        width: 22px;
+        height: 22px;
+    }
+    
+    .reactions-container .reaction-btn-label {
+        top: 60px;
+        left: 60px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .reactions-container .comment-btn-label, .share-btn-label {
+        top: -54px;
+        left: 210px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .reactions-container .comment-btn {
+        top: -16px;
+        left: 180px;
+        height: 24px;
+        width: 24px;
+    }
+    
+    .reactions-container .comment-btn-label {
+        top: -54px;
+        left: 210px;
+    }
+    
+    .reactions-container .share-btn {
+        top: -90px;
+        left: 351px;
+    }
+    
+    .reactions-container .share-btn-label {
+        top: -127px;
+        left: 382px;
+    }
+}
